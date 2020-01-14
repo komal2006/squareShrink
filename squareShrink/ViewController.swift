@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblCount: UILabel!
     @IBOutlet weak var square: UIView!
     var timer: Timer!
+    var c = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblCount.text = "\(c)"
         // Do any additional setup after loading the view.
          let mainViewHeight = view.frame.size.height
              let mainViewWidth = view.frame.size.width
@@ -43,11 +46,15 @@ class ViewController: UIViewController {
              {
                timer.invalidate()
                self.shrink()
+                
              }
              }
              
            }
            func shrink(){
+            
+            self.c+=1
+            lblCount.text = "\(c)"
             var timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true)
             { timer in
               //self.myView.backgroundColor = .random()
