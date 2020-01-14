@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var square: UIView!
     var timer: Timer!
     var c = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         lblCount.text = "\(c)"
